@@ -1,0 +1,12 @@
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+.loginButton{
+    padding: 5px 20px 5px 20px;
+    border-radius: 5px;
+}
+.loginButton:hover{
+    
+    background-color: #3636a3;
+}

@@ -1,0 +1,27 @@
+.loginContainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image:linear-gradient(rgb(113 115 218),rgb(241, 243, 244));
+    clip-path: polygon(0% 0%,150% 0% ,200% 100%,0% 60%);
+}
+.loginContainer-div{
+    text-align: center;
+    margin-top: -200px;
+    margin-bottom: 100px;
+    color: white;
+    font-family: monospace
+}
+.loginContainer .row{
+    width: 100%;
+}
+mat-form-field{
+    width: 100%;
+}
+.center{
+    text-align: center;
+}
+mat-icon{
+
+}

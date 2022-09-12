@@ -1,0 +1,23 @@
+<div class="loginContainer">
+    <div class="loginContainer-div">
+        <h1>Welcome to MyKart</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-8 offset-sm-2 col-10 offset-1">
+            <div>
+                <h4>Login here</h4>
+                <form class="center" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                    <mat-form-field MatFormFieldControl>
+                        <mat-label>User Name</mat-label>
+                        <input type="text" name="uName" placeholder="Enter your name" matInput required [(ngModel)]="formData.name">
+                    </mat-form-field>
+                    <mat-form-field MatFormFieldControl>
+                        <mat-label>Password</mat-label>
+                        <input type="password" name="password" placeholder="Enter password" matInput required [(ngModel)]="formData.password">
+                    </mat-form-field>
+                    <button  mat-raised-button color="primary" type="submit" >Login &nbsp;<span><mat-icon>login</mat-icon></span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
