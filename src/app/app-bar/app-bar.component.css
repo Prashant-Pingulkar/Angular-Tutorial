@@ -10,3 +10,14 @@
     
     background-color: #3636a3;
 }
+.toolbarContainer{
+    height: 100%;
+}
+.sideNav{
+    width: 200px;
+}
+.logo{
+    font-size: large;
+}
+
+

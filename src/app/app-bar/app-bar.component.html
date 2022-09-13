@@ -1,21 +1,53 @@
-<mat-toolbar color="primary">
-    <!-- <mat-toolbar-row> -->
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button class="btn btn-block text-light loginButton" routerLink="register">Register</button>
-      <!-- <button mat-raised-button class="example-icon" aria-label="Example icon-button with menu icon"> -->
-        <!-- <mat-icon>menu</mat-icon> -->
-      <!-- </button> -->
-    <!-- </mat-toolbar-row> -->
-  
-    <!-- <mat-toolbar-row>
-      <span>Second Line</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
+<div class="toolbarContainer">
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar-row> -->
+    </div>
+
+    <a mat-button routerLink="/">
+      <span class="logo">My Kart</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div *ngIf="url=='/login' ||url=='/';else hh" fxShow="true" fxHide.lt-md="true">
+
+      <a mat-button routerLink="/products">Products</a>
+      <a mat-button routerLink="/about-us">About us</a>
+      <a mat-button routerLink="/contact">Contact</a>
+      <a mat-button routerLink="/register">Register</a>
+    </div>
+    <div>
+      <ng-template #hh>
+        <a mat-button routerLink="/products">Products</a>
+        <a mat-button routerLink="/about-us">About us</a>
+        <a mat-button routerLink="/contact">Contact</a>
+        <a mat-button routerLink="/login">Login</a>
+      </ng-template>
+    </div>
+
   </mat-toolbar>
+  <mat-sidenav-container fxFlexFill>
+
+    <mat-sidenav class="sideNav" color="primary" #sidenav fxLayout="column" mode="over" opened="false"
+      fxHide.gt-sm="true">
+      <div *ngIf="url=='/login' ||url=='/'" fxLayout="column">
+        <a mat-button (click)="sidenav.toggle()" routerLink="/products">Products</a>
+        <a mat-button (click)="sidenav.toggle()" routerLink="/about-us">About us</a>
+        <a mat-button (click)="sidenav.toggle()" routerLink="/contact">Contact</a>
+        <a mat-button (click)="sidenav.toggle()" routerLink="/register">Register</a>
+
+      </div>
+      <div *ngIf="!(url=='/login' ||url=='/')" fxLayout="column">
+        <a mat-button (click)="sidenav.toggle()" routerLink="/products">Products</a>
+        <a mat-button (click)="sidenav.toggle()" routerLink="/about-us">About us</a>
+        <a mat-button (click)="sidenav.toggle()" routerLink="/contact">Contact</a>
+        <a mat-button (click)="sidenav.toggle()" routerLink="/login">Login</a>
+
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

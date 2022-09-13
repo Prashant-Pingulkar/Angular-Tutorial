@@ -14,13 +14,21 @@ import {MatButtonModule} from '@angular/material/button'
 import {MatIconModule} from '@angular/material/icon'
 import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ProductsComponent } from './products/products.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppBarComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProductsComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     FormsModule,
@@ -32,7 +40,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FlexLayoutModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
