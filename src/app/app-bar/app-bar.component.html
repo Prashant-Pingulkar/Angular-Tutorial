@@ -1,6 +1,6 @@
 <div class="toolbarContainer">
   <mat-toolbar color="primary">
-    <div fxShow="true" fxHide.gt-sm="true">
+    <div fxShow="true" fxHide.gt-xs="true">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
@@ -10,20 +10,22 @@
       <span class="logo">My Kart</span>
     </a>
     <span class="example-spacer"></span>
-    <div *ngIf="url=='/login' ||url=='/';else hh" fxShow="true" fxHide.lt-md="true">
+    <div fxShow="true" fxHide.lt-sm="true">
+      <div *ngIf="url=='/login' ||url=='/';else hh">
 
-      <a mat-button routerLink="/products">Products</a>
-      <a mat-button routerLink="/about-us">About us</a>
-      <a mat-button routerLink="/contact">Contact</a>
-      <a mat-button routerLink="/register">Register</a>
-    </div>
-    <div>
-      <ng-template #hh>
         <a mat-button routerLink="/products">Products</a>
         <a mat-button routerLink="/about-us">About us</a>
         <a mat-button routerLink="/contact">Contact</a>
-        <a mat-button routerLink="/login">Login</a>
-      </ng-template>
+        <a mat-button routerLink="/register">Register</a>
+      </div>
+      <div>
+        <ng-template #hh>
+          <a mat-button routerLink="/products">Products</a>
+          <a mat-button routerLink="/about-us">About us</a>
+          <a mat-button routerLink="/contact">Contact</a>
+          <a mat-button routerLink="/login">Login</a>
+        </ng-template>
+      </div>
     </div>
 
   </mat-toolbar>
