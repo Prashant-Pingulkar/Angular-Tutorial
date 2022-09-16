@@ -1,0 +1,18 @@
+.signUpContainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image:linear-gradient(rgb(113 115 218),rgb(241, 243, 244));
+    clip-path: polygon(0% 0%,150% 0% ,100% 100%,0% 80%);
+    overflow: hidden;
+}
+.signUpContainer-div{
+    text-align: center;
+    color: white;
+    margin-bottom:50px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}

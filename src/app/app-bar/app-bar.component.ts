@@ -8,6 +8,8 @@ import { NavigationStart, Router,Event, NavigationEnd } from '@angular/router';
 })
 export class AppBarComponent implements OnInit {
   url:string=''
+  logged=false
+  user:string|null='Guest'
   constructor(private router:Router) { 
     
   }
@@ -16,6 +18,9 @@ export class AppBarComponent implements OnInit {
     this.router.events.subscribe((event:Event)=>{
       if(event instanceof NavigationEnd){
         this.url=this.router.url
+        this.logged=localStorage.getItem('logged')=='true'
+        this.user=localStorage.getItem('user')
+        console.log(this.logged)
       }
     })
   }

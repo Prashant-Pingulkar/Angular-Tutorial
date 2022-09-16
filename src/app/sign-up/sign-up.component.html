@@ -1,1 +1,35 @@
-<p>sign-up works!</p>
+<div class="signUpContainer">
+    <div class="signUpContainer-div">
+        <h1>Welcome to MyKart</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-8 offset-sm-2 col-10 offset-1">
+            <div>
+                <h4 style="color:white;font-size:x-large;font-family:'Times New Roman', Times, serif">Register here</h4>
+                <form class="center" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+                    <mat-form-field MatFormFieldControl>
+                        <mat-label>User  Name</mat-label>
+                        <input type="text" name="userName" placeholder="Enter your name" matInput required [(ngModel)]="formData.userName">
+                    </mat-form-field>
+                    <mat-form-field MatFormFieldControl>
+                        <mat-label>Email</mat-label>
+                        <input type="email" name="emailId" placeholder="Enter your Email" matInput required [(ngModel)]="formData.emailId">
+                    </mat-form-field>
+                    <mat-form-field MatFormFieldControl>
+                        <mat-label>Date of Birth</mat-label>
+                        <input type="date" name="dob" placeholder="Enter your DOB" matInput required [(ngModel)]="formData.dob">
+                    </mat-form-field>
+                    <mat-form-field MatFormFieldControl>
+                        <mat-label>Phone No.</mat-label>
+                        <input type="number" name="phoneNo" placeholder="Enter mobile number" matInput required [(ngModel)]="formData.phoneNo">
+                    </mat-form-field>
+                    <mat-form-field MatFormFieldControl>
+                        <mat-label>Password</mat-label>
+                        <input type="password" name="password" placeholder="Enter password" matInput required [(ngModel)]="formData.password">
+                    </mat-form-field>
+                    <button  mat-raised-button color="primary" type="submit" >Register <mat-icon>register</mat-icon></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

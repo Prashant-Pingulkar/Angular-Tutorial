@@ -19,5 +19,27 @@
 .logo{
     font-size: large;
 }
+#section{
+    background: #b7e1b7;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+}
+.bottomToolbar{
+    background: white;
+    color: black;
+}
+.search{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+p{
+    color: #9ac4b2;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
 
 

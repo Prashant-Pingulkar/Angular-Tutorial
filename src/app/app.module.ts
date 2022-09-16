@@ -19,6 +19,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { ProductsComponent } from './products/products.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     SignUpComponent,
     ProductsComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    DashboardComponent,
+    MyOrdersComponent
   ],
   imports: [
     FormsModule,
@@ -42,7 +49,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     MatButtonModule,
     MatIconModule,
     FlexLayoutModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule,
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
