@@ -14,7 +14,8 @@ page=1
   constructor(private productService:ProductServiceService) { }
 
   ngOnInit(): void {
-    this.productService.getProducts(this.page).subscribe((data)=>{
+    let searchValue=this.value==''?'NoSearch':this.value
+    this.productService.getProducts(this.page,searchValue).subscribe((data)=>{
       console.log(data.bookings)
       this.totalProducts=data.bookings.cnt
       this.products=data.bookings.data2
@@ -23,11 +24,18 @@ page=1
       console.log(error)
     })
   }
-
-  getProducts(event:any){
-    this.page=event.pageIndex+1
+  Search(){
+    this.getProducts()
+  }
+  clear(){
+    this.value=''
+    this.getProducts()
+  }
+  getProducts(event?:any){
     console.log(event)
-    this.productService.getProducts(this.page).subscribe((data)=>{
+    this.page=event?event.pageIndex+1:1
+    let searchValue=this.value==''?'NoSearch':this.value
+    this.productService.getProducts(this.page,searchValue).subscribe((data)=>{
       console.log(data.bookings)
       this.totalProducts=data.bookings.cnt
       this.products=data.bookings.data2

@@ -11,6 +11,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [{path:'register',component:SignUpComponent},
 {path:'products',component:ProductsComponent},
+{path:'products/:category',component:SignUpComponent},
 {path:'about-us',component:AboutUsComponent},
 {path:'contact',component:ContactUsComponent},
 {path:'login',component:LoginComponent},

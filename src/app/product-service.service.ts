@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class ProductServiceService {
 
   constructor(private httpClient:HttpClient) { }
-  getProducts(page:number):Observable<any>{
-    return this.httpClient.get(`http://localhost:1050/getAllProducts/${page}/All/NoSearch`,{withCredentials:true})
+  getProducts(page:number,search:string):Observable<any>{
+    return this.httpClient.get(`http://localhost:1050/getAllProducts/${page}/All/${search}`,{withCredentials:true})
   }
 }
 
